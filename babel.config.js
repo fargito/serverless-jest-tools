@@ -1,19 +1,19 @@
 const defaultPresets = [
-  ["@babel/preset-typescript", { allowNamespaces: true }],
+  ['@babel/preset-typescript', { allowNamespaces: true }],
 ];
 
 const defaultIgnores = [
-  "**/*.test.tsx?",
-  "**/test.tsx?",
-  "**/*.stories.tsx?",
-  "**/stories.tsx?",
-  "node_modules",
-  "dist",
+  '**/*.test.tsx?',
+  '**/test.tsx?',
+  '**/*.stories.tsx?',
+  '**/stories.tsx?',
+  'node_modules',
+  'dist',
 ];
 
 const presetsForESM = [
   [
-    "@babel/preset-env",
+    '@babel/preset-env',
     {
       modules: false,
     },
@@ -22,15 +22,15 @@ const presetsForESM = [
 ];
 const presetsForCJS = [
   [
-    "@babel/preset-env",
+    '@babel/preset-env',
     {
-      modules: "cjs",
+      modules: 'cjs',
     },
   ],
   ...defaultPresets,
 ];
 
-const plugins = ["@babel/plugin-transform-runtime"];
+const plugins = ['@babel/plugin-transform-runtime'];
 
 module.exports = {
   env: {

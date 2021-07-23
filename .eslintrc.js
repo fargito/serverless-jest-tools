@@ -1,15 +1,5 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 9,
-    sourceType: 'module',
-  },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-  env: {
-    es6: true,
-    node: true,
-    jest: true,
-  },
   rules: {
     'prettier/prettier': 'error',
     'import/extensions': 0,
@@ -29,23 +19,21 @@ module.exports = {
         peerDependencies: false,
       },
     ],
-    'no-shadow': 'off',
+    'no-shadow': [
+      'error',
+      {
+        hoist: 'all',
+      },
+    ],
     'prefer-const': 'error',
     'import/order': [
       'error',
       {
-        pathGroups: [],
         groups: [
           ['external', 'builtin'],
           'internal',
           ['parent', 'sibling', 'index'],
         ],
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: false,
-        },
-        'newlines-between': 'always',
-        pathGroupsExcludedImportTypes: ['builtin'],
       },
     ],
     'sort-imports': [
@@ -59,7 +47,11 @@ module.exports = {
     ],
     'padding-line-between-statements': [
       'error',
-      { blankLine: 'always', prev: '*', next: 'return' },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return',
+      },
     ],
     'prefer-arrow/prefer-arrow-functions': [
       'error',
@@ -71,31 +63,44 @@ module.exports = {
     ],
     'no-restricted-imports': [
       'error',
-      // Lodash tree shaking isn't working so directly importing lodash results in importing the whole library.
-      // This rule should prevent importing the whole lodash library.
-      // https://lodash.com/per-method-packages
       {
         paths: [
           {
             name: 'lodash',
             message: 'Please use lodash/{module} import instead',
           },
-          { name: '.', message: 'Please use explicit import file' },
+          {
+            name: '.',
+            message: 'Please use explicit import file',
+          },
         ],
       },
     ],
+    curly: ['error', 'all'],
   },
-  plugins: ['import', 'prefer-arrow'],
+  root: true,
+  env: {
+    es6: true,
+    node: true,
+    jest: true,
+    browser: true,
+  },
+  plugins: ['prefer-arrow', 'import'],
+  parserOptions: {
+    ecmaVersion: 9,
+    sourceType: 'module',
+  },
   overrides: [
     {
       files: ['**/*.ts?(x)'],
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:prettier/recommended',
       ],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: './tsconfig.json',
+        project: 'tsconfig.json',
       },
       rules: {
         '@typescript-eslint/prefer-optional-chain': 'error',
@@ -118,6 +123,11 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/ban-types': 'error',
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+        '@typescript-eslint/no-unnecessary-condition': 'error',
+        '@typescript-eslint/no-unnecessary-type-arguments': 'error',
+        '@typescript-eslint/prefer-string-starts-ends-with': 'error',
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
       },
     },
   ],
