@@ -1,6 +1,6 @@
 {
   "name": "serverless-jest-tools",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "version": "1.0.0",
   "files": [
     "dist"
@@ -57,5 +57,21 @@
   "engines": {
     "node": "^14.16.1",
     "yarn": "^1.22.5"
-  }
+  },
+  "description": "Aims to provide a simple and secure framework for integration testing on the Serverless framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fargito/serverless-jest-tools.git"
+  },
+  "keywords": [
+    "serverless",
+    "jest",
+    "test",
+    "integration"
+  ],
+  "author": "fargito",
+  "bugs": {
+    "url": "https://github.com/fargito/serverless-jest-tools/issues"
+  },
+  "homepage": "https://github.com/fargito/serverless-jest-tools#readme"
 }
