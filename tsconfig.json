@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist/types",
+    "esModuleInterop": true,
+    "types": ["node", "jest"],
+    "lib": ["es2020"],
+    "removeComments": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "target": "es2019",
+    "strictFunctionTypes": false
+  },
+  "exclude": ["./dist", "./node_modules"],
+  "include": ["./**/*.ts"]
+}
