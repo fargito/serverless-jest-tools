@@ -1,7 +1,11 @@
 import * as AWS from 'aws-sdk';
 
 import { getCliConfiguration } from '../cliConnector';
-import { TestOperationType, TestUtilsPayload, TestUtilsResponse } from './types';
+import {
+  TestOperationType,
+  TestUtilsPayload,
+  TestUtilsResponse,
+} from './types';
 
 const invokeTestUtilsLambda = async <TestNames extends string>(
   functionName: string,

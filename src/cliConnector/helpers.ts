@@ -2,11 +2,17 @@ import AWS from 'aws-sdk';
 
 import { SERVERLESS_TEST_TOOLS_CONFIG } from './config';
 
-const { DEFAULT_WAITING_TIME_FOR_EVENT_CREATION } = SERVERLESS_TEST_TOOLS_CONFIG;
+const { DEFAULT_WAITING_TIME_FOR_EVENT_CREATION } =
+  SERVERLESS_TEST_TOOLS_CONFIG;
 
-export const waitForEventCreation = async (timeoutMilliseconds?: number): Promise<void> => {
+export const waitForEventCreation = async (
+  timeoutMilliseconds?: number,
+): Promise<void> => {
   return new Promise(resolve =>
-    setTimeout(resolve, timeoutMilliseconds ?? DEFAULT_WAITING_TIME_FOR_EVENT_CREATION),
+    setTimeout(
+      resolve,
+      timeoutMilliseconds ?? DEFAULT_WAITING_TIME_FOR_EVENT_CREATION,
+    ),
   );
 };
 

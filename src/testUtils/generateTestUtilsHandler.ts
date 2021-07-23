@@ -1,20 +1,26 @@
 import crypto from 'crypto';
 
-import { TestUtilsConfiguration, TestUtilsHandler, TestUtilsPayload } from './types';
+import {
+  TestUtilsConfiguration,
+  TestUtilsHandler,
+  TestUtilsPayload,
+} from './types';
 
-export const generateTestUtilsHandler = <TestNames extends string>(
-  configuration: TestUtilsConfiguration<TestNames>,
-): TestUtilsHandler<TestNames> => async (testUtilsPayload: TestUtilsPayload<TestNames>) => {
-  const { testName, operationType } = testUtilsPayload;
+export const generateTestUtilsHandler =
+  <TestNames extends string>(
+    configuration: TestUtilsConfiguration<TestNames>,
+  ): TestUtilsHandler<TestNames> =>
+  async (testUtilsPayload: TestUtilsPayload<TestNames>) => {
+    const { testName, operationType } = testUtilsPayload;
 
-  const sharedRandomString =
-    'sharedRandomString' in testUtilsPayload
-      ? testUtilsPayload.sharedRandomString
-      : crypto.randomBytes(4).toString('hex');
+    const sharedRandomString =
+      'sharedRandomString' in testUtilsPayload
+        ? testUtilsPayload.sharedRandomString
+        : crypto.randomBytes(4).toString('hex');
 
-  const setupOrCleanup = configuration[testName];
+    const setupOrCleanup = configuration[testName];
 
-  await setupOrCleanup(operationType, sharedRandomString);
+    await setupOrCleanup(operationType, sharedRandomString);
 
-  return { sharedRandomString };
-};
+    return { sharedRandomString };
+  };

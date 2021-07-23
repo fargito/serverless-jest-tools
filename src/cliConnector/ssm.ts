@@ -3,18 +3,7 @@ import * as AWS from 'aws-sdk';
 import { getCliConfiguration } from './aws-cli-authentication';
 import { SERVERLESS_TEST_TOOLS_CONFIG } from './config';
 
-const { LEGACY_API_KEY_NAME, HTTP_API_ENDPOINT_KEY_NAME } = SERVERLESS_TEST_TOOLS_CONFIG;
-
-export const getLegacyApiKey = async (): Promise<string | undefined> => {
-  const { region, credentials } = getCliConfiguration();
-  const ssm = new AWS.SSM({ region, credentials });
-
-  const legacyApiKeyResource = await ssm
-    .getParameter({ Name: LEGACY_API_KEY_NAME, WithDecryption: true })
-    .promise();
-
-  return legacyApiKeyResource.Parameter?.Value;
-};
+const { HTTP_API_ENDPOINT_KEY_NAME } = SERVERLESS_TEST_TOOLS_CONFIG;
 
 export const getHttpApiEndpoint = async (): Promise<string> => {
   const { region, credentials } = getCliConfiguration();

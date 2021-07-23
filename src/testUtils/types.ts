@@ -14,7 +14,11 @@ export type TestUtilsPayload<TestNames extends string> =
       testName: TestNames;
       operationType: TestOperationType.SETUP;
     }
-  | { testName: TestNames; operationType: TestOperationType.CLEANUP; sharedRandomString: string };
+  | {
+      testName: TestNames;
+      operationType: TestOperationType.CLEANUP;
+      sharedRandomString: string;
+    };
 
 /**
  * The response of the test utils lambda. It returns a shared random string to avoid collision between tests

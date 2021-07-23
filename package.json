@@ -1,5 +1,5 @@
 {
-  "name": "@uno/backend-jest-tools",
+  "name": "serverless-jest-tools",
   "license": "UNLICENSED",
   "version": "1.0.0",
   "files": [
