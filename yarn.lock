@@ -2106,6 +2106,11 @@
   dependencies:
     "@octokit/openapi-types" "^9.1.0"
 
+"@serverless/typescript@^2.55.0":
+  version "2.55.0"
+  resolved "https://registry.yarnpkg.com/@serverless/typescript/-/typescript-2.55.0.tgz#e3b57758d5eb1501a71814d129fd57ae32dacd75"
+  integrity sha512-Q39+Iko5KExGxv41wJi5B5jcXr+HhEn5c6fIYxVSVB7ZXMCUcPcXrsovQWVFal4Z3aMVl5r6fwKeIC8EDO9jWA==
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -2239,6 +2244,11 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
   integrity sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==
+
+"@types/serverless@^1.78.34":
+  version "1.78.34"
+  resolved "https://registry.yarnpkg.com/@types/serverless/-/serverless-1.78.34.tgz#a164f3e5ed05e1c525e5718a1864dde1fc9786d2"
+  integrity sha512-i5e86m5bbNlkqQTS7yZJZppzgpi5+tfPB61ra+b63cFvDmpWH+O06V53TdBMYdMvxwmGUQb5GfwWmHoptbOAMg==
 
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
